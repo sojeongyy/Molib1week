@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_spacing">30dp</dimen>
+    <dimen name="divider_spacing">0.5dp</dimen>
+    <dimen name="divider_padding_above">20dp</dimen> <!-- 구분선 위 여백 -->
+    <dimen name="divider_padding_below">20dp</dimen> <!-- 구분선 아래 여백 -->
+</resources>
