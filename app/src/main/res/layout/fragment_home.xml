@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:background="@drawable/background_gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- 메인 컨테이너: 수직 정렬, 가운데 정렬 -->
+    <LinearLayout
+        android:id="@+id/home_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="100dp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
 
+        <!-- 타이틀 -->
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Obsidian"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="@android:color/white" />
+
+        <!-- 서브타이틀/설명 -->
+
+        <!-- 검색바 -->
+        <TextView
+            android:id="@+id/home_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Obsidian과 함께\n세계적인 럭셔리 브랜드 자동차를\n한눈에 확인하세요."
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/search_bar_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/search_bar_bg"
+            android:padding="8dp">
+
+            <!-- 검색 아이콘 -->
+            <ImageView
+                android:id="@+id/home_search_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_search"
+                android:layout_marginEnd="8dp" />
+
+            <!-- 검색 입력창 -->
+            <EditText
+                android:id="@+id/home_search_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif"
+                android:hint="브랜드 입력"
+                android:paddingTop="8dp"
+                android:paddingBottom="48dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 </FrameLayout>
