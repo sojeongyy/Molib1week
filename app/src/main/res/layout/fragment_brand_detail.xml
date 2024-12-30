@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 브랜드 로고 -->
+        <ImageView
+            android:id="@+id/brandLogo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerInside"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="40dp"/>
+
+        <!-- 브랜드 이름 -->
+        <TextView
+            android:id="@+id/brandName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="100dp" />
+
+        <!-- 웹사이트 -->
+        <TextView
+            android:id="@+id/brandSiteLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Site"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/brandSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#007BFF"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 주소 -->
+        <TextView
+            android:id="@+id/brandAddressLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/brandAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 전화번호 -->
+        <TextView
+            android:id="@+id/brandPhoneLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/brandPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#007BFF" />
+    </LinearLayout>
+</ScrollView>

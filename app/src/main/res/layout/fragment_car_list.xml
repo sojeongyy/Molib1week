@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1B1B1B">
+
+<!--    android:padding="1dp">-->
+
+
+    <!-- 상단 브랜드 이름 -->
+    <TextView
+        android:id="@+id/brandTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Obsidian"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp" />
+
+    <!-- 상단 설명 -->
+    <TextView
+        android:id="@+id/brandSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="국내 자동차 직영점 전화번호"
+        android:layout_marginLeft="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:gravity="left"
+        android:layout_marginBottom="16dp" />
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:background="#1B1B1B" />
+</LinearLayout>

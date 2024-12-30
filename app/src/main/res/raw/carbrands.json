@@ -1,0 +1,45 @@
+[
+  {
+    "name": "McLaren Seoul",
+    "phone": "+82 02-3482-6565",
+    "logo": "mclaren",
+    "site": "https://seoul.mclaren.co.kr",
+    "address": "06177 서울특별시 강남구 영동대로 320\n강남스퀘어 8층 (우) 04153\n대표자 성명: Monteverde Kim\n이메일: Monteverde_K@Mclaren.com\n호스팅서비스 제공자: Amazon Web Services, Inc. \n고객 컨택 센터: 서울특별시 강남구 도산대로 124길 82로 4층",
+    "carImage": "pupleCar"
+  },
+  {
+    "name": "Bugatti Seoul",
+    "phone": "+82 02-3482-6565",
+    "logo": "bugatti",
+    "site": "https://seoul.mclaren.co.kr",
+    "address": "06177 서울특별시 강남구 영동대로 320\n강남스퀘어 8층 (우) 04153\n대표자 성명: Monteverde Kim\n이메일: Monteverde_K@Mclaren.com\n호스팅서비스 제공자: Amazon Web Services, Inc. \n고객 컨택 센터: 서울특별시 강남구 도산대로 124길 82로 4층"
+  },
+  {
+    "name": "Lamborghini Seoul",
+    "phone": "+82 02-3482-6565",
+    "logo": "lamborghini",
+    "site": "https://seoul.mclaren.co.kr",
+    "address": "06177 서울특별시 강남구 영동대로 320\n강남스퀘어 8층 (우) 04153\n대표자 성명: Monteverde Kim\n이메일: Monteverde_K@Mclaren.com\n호스팅서비스 제공자: Amazon Web Services, Inc. \n고객 컨택 센터: 서울특별시 강남구 도산대로 124길 82로 4층"
+  },
+  {
+    "name": "Porsche Gangnam",
+    "phone": "+82 02-3482-6565",
+    "logo": "porsche",
+    "site": "https://seoul.mclaren.co.kr",
+    "address": "06177 서울특별시 강남구 영동대로 320\n강남스퀘어 8층 (우) 04153\n대표자 성명: Monteverde Kim\n이메일: Monteverde_K@Mclaren.com\n호스팅서비스 제공자: Amazon Web Services, Inc. \n고객 컨택 센터: 서울특별시 강남구 도산대로 124길 82로 4층"
+  },
+  {
+    "name": "Maybach Gangnam",
+    "phone": "+82 02-3482-6565",
+    "logo": "maybach",
+    "site": "https://seoul.mclaren.co.kr",
+    "address": "06177 서울특별시 강남구 영동대로 320\n강남스퀘어 8층 (우) 04153\n대표자 성명: Monteverde Kim\n이메일: Monteverde_K@Mclaren.com\n호스팅서비스 제공자: Amazon Web Services, Inc. \n고객 컨택 센터: 서울특별시 강남구 도산대로 124길 82로 4층"
+  },
+  {
+    "name": "RollsRoyce Seoul",
+    "phone": "+82 02-3482-6565",
+    "logo": "rollsroyce",
+    "site": "https://seoul.mclaren.co.kr",
+    "address": "06177 서울특별시 강남구 영동대로 320\n강남스퀘어 8층 (우) 04153\n대표자 성명: Monteverde Kim\n이메일: Monteverde_K@Mclaren.com\n호스팅서비스 제공자: Amazon Web Services, Inc. \n고객 컨택 센터: 서울특별시 강남구 도산대로 124길 82로 4층"
+  }
+]

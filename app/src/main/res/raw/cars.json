@@ -1,0 +1,222 @@
+[
+  {
+    "name": "RollsRoyce Phantom",
+    "imageName": "rollsroyce_phantom",
+    "brand": "Rolls-Royce",
+    "launchYear": "2003",
+    "options": "Luxury Package",
+    "horsepower": "563hp",
+    "modelYear": "2023",
+    "fuelEconomy": "5.8km/l",
+    "price": "600,000,000원"
+  },
+  {
+    "name": "Panamera",
+    "imageName": "porsche_panamera",
+    "brand": "Porsche",
+    "launchYear": "2009",
+    "options": "PDK, Luxury Package",
+    "horsepower": "330hp",
+    "modelYear": "2023",
+    "fuelEconomy": "9.5km/l",
+    "price": "135,800,000원"
+  },
+  {
+    "name": "Cayenne",
+    "imageName": "porsche_cayenne",
+    "brand": "Porsche",
+    "launchYear": "2002",
+    "options": "Tiptronic S, SUV Package",
+    "horsepower": "335hp",
+    "modelYear": "2023",
+    "fuelEconomy": "9.0km/l",
+    "price": "108,400,000원"
+  },
+  {
+    "name": "718 Boxster",
+    "imageName": "porsche_718_boxster",
+    "brand": "Porsche",
+    "launchYear": "1996",
+    "options": "PDK, Convertible",
+    "horsepower": "300hp",
+    "modelYear": "2023",
+    "fuelEconomy": "10.8km/l",
+    "price": "92,700,000원"
+  },
+  {
+    "name": "911 GT3",
+    "imageName": "porsche_911_gt3",
+    "brand": "Porsche",
+    "launchYear": "1999",
+    "options": "PDK, GT Package",
+    "horsepower": "502hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.8km/l",
+    "price": "210,400,000원"
+  },
+  {
+    "name": "911 Cabriolet",
+    "imageName": "porsche_911_cabriolet",
+    "brand": "Porsche",
+    "launchYear": "1963",
+    "options": "PDK, Cabriolet",
+    "horsepower": "443hp",
+    "modelYear": "2023",
+    "fuelEconomy": "8.9km/l",
+    "price": "146,900,000원"
+  },
+  {
+    "name": "911",
+    "imageName": "porsche_911",
+    "brand": "Porsche",
+    "launchYear": "1964",
+    "options": "PDK",
+    "horsepower": "380hp",
+    "modelYear": "2023",
+    "fuelEconomy": "9.9km/l",
+    "price": "118,000,000원"
+  },
+  {
+    "name": "McLaren 720sBlue",
+    "imageName": "mclaren_720s_blue",
+    "brand": "McLaren",
+    "launchYear": "2017",
+    "options": "7-Speed Dual-Clutch, Blue Edition",
+    "horsepower": "710hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.5km/l",
+    "price": "300,000,000원"
+  },
+  {
+    "name": "McLaren 720sBlack",
+    "imageName": "mclaren_720s_black",
+    "brand": "McLaren",
+    "launchYear": "2017",
+    "options": "7-Speed Dual-Clutch, Black Edition",
+    "horsepower": "710hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.5km/l",
+    "price": "300,000,000원"
+  },
+  {
+    "name": "McLaren 720s",
+    "imageName": "mclaren_720s",
+    "brand": "McLaren",
+    "launchYear": "2017",
+    "options": "7-Speed Dual-Clutch",
+    "horsepower": "710hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.5km/l",
+    "price": "290,000,000원"
+  },
+  {
+    "name": "Maybach S680",
+    "imageName": "maybach_s680",
+    "brand": "Maybach",
+    "launchYear": "2021",
+    "options": "4Matic, Executive Package",
+    "horsepower": "603hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.6km/l",
+    "price": "300,000,000원"
+  },
+  {
+    "name": "Lamborghini Veneno",
+    "imageName": "lamborghini_veneno",
+    "brand": "Lamborghini",
+    "launchYear": "2013",
+    "options": "7-Speed ISR",
+    "horsepower": "740hp",
+    "modelYear": "2023",
+    "fuelEconomy": "5.0km/l",
+    "price": "4,000,000,000원"
+  },
+  {
+    "name": "Lamborghini Urus",
+    "imageName": "lamborghini_urus",
+    "brand": "Lamborghini",
+    "launchYear": "2018",
+    "options": "8-Speed Auto, SUV",
+    "horsepower": "641hp",
+    "modelYear": "2023",
+    "fuelEconomy": "6.0km/l",
+    "price": "270,000,000원"
+  },
+  {
+    "name": "Lamborghini huracan",
+    "imageName": "lamborghini_huracan",
+    "brand": "Lamborghini",
+    "launchYear": "2014",
+    "options": "7-Speed DCT",
+    "horsepower": "602hp",
+    "modelYear": "2023",
+    "fuelEconomy": "6.5km/l",
+    "price": "280,000,000원"
+  },
+  {
+    "name": "Lamborghini Aventador",
+    "imageName": "lamborghini_aventador",
+    "brand": "Lamborghini",
+    "launchYear": "2011",
+    "options": "7-Speed ISR",
+    "horsepower": "690hp",
+    "modelYear": "2023",
+    "fuelEconomy": "5.5km/l",
+    "price": "450,000,000원"
+  },
+  {
+    "name": "Ferrari Roma",
+    "imageName": "ferrari_roma",
+    "brand": "Ferrari",
+    "launchYear": "2020",
+    "options": "8-Speed DCT",
+    "horsepower": "611hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.4km/l",
+    "price": "290,000,000원"
+  },
+  {
+    "name": "Ferrari LaFerrari",
+    "imageName": "ferrari_laferrari",
+    "brand": "Ferrari",
+    "launchYear": "2013",
+    "options": "Hybrid, 7-Speed DCT",
+    "horsepower": "949hp",
+    "modelYear": "2023",
+    "fuelEconomy": "5.0km/l",
+    "price": "2,000,000,000원"
+  },
+  {
+    "name": "Bugatti Chiron",
+    "imageName": "bugatti_chiron",
+    "brand": "Bugatti",
+    "launchYear": "2016",
+    "options": "7-Speed DSG",
+    "horsepower": "1500hp",
+    "modelYear": "2023",
+    "fuelEconomy": "4.0km/l",
+    "price": "3,000,000,000원"
+  },
+  {
+    "name": "Bentley ContinentalGT",
+    "imageName": "bentley_continentalgt",
+    "brand": "Bentley",
+    "launchYear": "2003",
+    "options": "8-Speed Dual-Clutch",
+    "horsepower": "542hp",
+    "modelYear": "2023",
+    "fuelEconomy": "7.2km/l",
+    "price": "220,000,000원"
+  },
+  {
+    "name": "Bentley Bentayga",
+    "imageName": "bentley_bentayga",
+    "brand": "Bentley",
+    "launchYear": "2015",
+    "options": "8-Speed Auto, SUV Package",
+    "horsepower": "542hp",
+    "modelYear": "2023",
+    "fuelEconomy": "6.8km/l",
+    "price": "230,000,000원"
+  }
+]
