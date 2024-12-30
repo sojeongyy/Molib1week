@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +20,9 @@ class CarModelListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CarModelAdapter
+
+    // 검색창 입력 필드
+    private lateinit var searchInput: EditText
 
     // 검색어
     private var queryBrand: String? = null
@@ -47,52 +52,74 @@ class CarModelListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_car_model_list, container, false)
-        redirectSystemOutToLogcat()
+
+        // 검색창과 RecyclerView 초기화
+        searchInput = view.findViewById(R.id.home_search_input)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-
-
-        // 1. JSON 로드 & 전체 자동차 목록 가져오기
+        // JSON 로드 & 초기 필터링
         val carListAll = loadCarsFromJson(requireContext())
-        println(carListAll)
-
-        // 2. 검색어가 있다면 필터링
-        val filteredList = if (!queryBrand.isNullOrEmpty()) {
-            var result = carListAll.filter { car ->
-                car.brand.contains(queryBrand!!, ignoreCase = true)
-            }
-            // 터미널에 출력
-            println("검색어: $queryBrand")
-            result.forEach { car ->
-                println("필터링된 자동차: ${car.name}")
-            }
-            result
+        val initialFilteredList = if (!queryBrand.isNullOrEmpty()) {
+            carListAll.filter { car -> car.brand.contains(queryBrand!!, ignoreCase = true) }
         } else {
-            // 검색어가 없으면 전체 목록
             carListAll
         }
 
-        // 3. 어댑터 생성 후 연결
-        adapter = CarModelAdapter(filteredList)
+        // 어댑터 설정 - 클릭 이벤트 추가
+        adapter = CarModelAdapter(initialFilteredList) { selectedCar ->
+            // 아이템 클릭 시 상세 페이지로 이동
+            val carDetailFragment = CarDetailFragment.newInstance(
+                selectedCar.name,
+                selectedCar.imageName,
+                selectedCar.brand,
+                selectedCar.launchYear,
+                selectedCar.options,
+                selectedCar.horsepower,
+                selectedCar.fuelEconomy,
+                selectedCar.price
+            )
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, carDetailFragment)
+                .addToBackStack(null)
+                .commit()
+        }
         recyclerView.adapter = adapter
+
+        // 검색창 이벤트 처리
+        searchInput.addTextChangedListener { text ->
+            val query = text?.toString()?.trim() ?: ""
+            val filteredList = if (query.isNotEmpty()) {
+                carListAll.filter { car -> car.brand.contains(query, ignoreCase = true) }
+            } else {
+                carListAll
+            }
+            adapter = CarModelAdapter(filteredList) { selectedCar ->
+                // 필터링 후에도 클릭 이벤트 처리
+                val carDetailFragment = CarDetailFragment.newInstance(
+                    selectedCar.name,
+                    selectedCar.imageName,
+                    selectedCar.brand,
+                    selectedCar.launchYear,
+                    selectedCar.options,
+                    selectedCar.horsepower,
+                    selectedCar.fuelEconomy,
+                    selectedCar.price
+                )
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, carDetailFragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+            recyclerView.adapter = adapter
+        }
 
         return view
     }
 
-    private fun redirectSystemOutToLogcat() {
-        System.setOut(object : java.io.PrintStream(System.out) {
-            override fun println(message: String?) {
-                Log.d(TAG, message ?: "null")
-            }
-        })
-    }
-    // JSON 파일에서 데이터 읽어오는 함수
     private fun loadCarsFromJson(context: Context): List<CarModel> {
-        redirectSystemOutToLogcat()
         return try {
             val inputStream = context.resources.openRawResource(R.raw.cars)
-            println("json 겅공")
             val jsonString = inputStream.bufferedReader().use { it.readText() }
 
             val gson = Gson()
@@ -104,3 +131,4 @@ class CarModelListFragment : Fragment() {
         }
     }
 }
+

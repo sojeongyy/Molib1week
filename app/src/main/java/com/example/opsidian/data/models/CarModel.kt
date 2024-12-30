@@ -1,5 +1,7 @@
 package com.example.opsidian.data.models
 
+import java.io.Serializable
+
 data class CarModel(
     val name: String,
     val imageName: String,
@@ -10,4 +12,4 @@ data class CarModel(
     val modelYear: Int,
     val fuelEconomy: String,
     val price: String
-)
+): Serializable
