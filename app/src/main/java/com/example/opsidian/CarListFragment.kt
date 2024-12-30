@@ -15,12 +15,18 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.yourapp.utils.MarginItemDecoration
 import org.json.JSONArray
+import com.example.opsidian.CarAdapter
+
+
 
 /**
  * A simple [Fragment] subclass.
  * Use the [CarListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
+
 class CarListFragment : Fragment() {
 
     override fun onCreateView(

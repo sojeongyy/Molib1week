@@ -41,4 +41,3 @@ class CarAdapter(
         return carList.size
     }
 }
-

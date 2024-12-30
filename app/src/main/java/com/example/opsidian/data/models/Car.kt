@@ -1,5 +1,5 @@
 package com.example.opsidian.data.models
-
+// 브랜드
 data class Car(
     val name: String,
     val phone: String,
