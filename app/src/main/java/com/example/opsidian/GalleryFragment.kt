@@ -2,89 +2,67 @@ package com.example.opsidian
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.opsidian.data.models.CarModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [GalleryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GalleryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: GalleryAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gallery, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_gallery, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        recyclerView = view.findViewById(R.id.recyclerViewGallery)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        // Step 1: Load the car list from JSON
+        // JSON 데이터 로드
         val carList = loadCarsFromJson(requireContext())
 
-        // Step 2: Find the RecyclerView in the layout
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCars)
+        // 어댑터 설정 및 클릭 이벤트 처리
+        adapter = GalleryAdapter(carList) { selectedCar ->
+            // 자동차 클릭 시 상세 페이지로 이동
+            val carDetailFragment = CarDetailFragment.newInstance(
+                selectedCar.name,
+                selectedCar.imageName,
+                selectedCar.brand,
+                selectedCar.launchYear,
+                selectedCar.options,
+                selectedCar.horsepower,
+                selectedCar.fuelEconomy,
+                selectedCar.price
+            )
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, carDetailFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        recyclerView.adapter = adapter
 
-        // Step 3: Set up the RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = CarAdapter(carList)
+        return view
     }
 
-    /**
-     * This function reads the JSON file and converts it into a list of Car objects
-     */
-    private fun loadCarsFromJson(context: Context): List<Car> {
-        // Step 1: Open the JSON file
-        val inputStream = context.resources.openRawResource(R.raw.cars)
-        val jsonString = inputStream.bufferedReader().use { it.readText() }
-
-        // Step 2: Convert JSON into a List of Cars
-        val carListType = object : TypeToken<List<Car>>() {}.type
-        return Gson().fromJson(jsonString, carListType)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GalleryFragment.
-         */
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GalleryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadCarsFromJson(context: Context): List<CarModel> {
+        return try {
+            val inputStream = context.resources.openRawResource(R.raw.cars)
+            val jsonString = inputStream.bufferedReader().use { it.readText() }
+            val gson = Gson()
+            val type = object : TypeToken<List<CarModel>>() {}.type
+            gson.fromJson(jsonString, type)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emptyList()
+        }
     }
 }
