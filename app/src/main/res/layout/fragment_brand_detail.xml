@@ -18,17 +18,18 @@
             android:layout_height="200dp"
             android:scaleType="centerInside"
             android:layout_marginBottom="30dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp" />
 
         <!-- 브랜드 이름 -->
         <TextView
             android:id="@+id/brandName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
+            android:fontFamily="serif"
             android:gravity="center"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="50dp"
             android:textColor="#FFFFFF" />
 
         <!-- 웹사이트 -->
@@ -65,20 +66,39 @@
             android:layout_marginBottom="16dp"
             android:textColor="#FFFFFF" />
 
-        <!-- 전화번호 -->
-        <TextView
-            android:id="@+id/brandPhoneLabel"
+        <!-- Spacer to push content up -->
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone Number"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"
-            android:textColor="#FFFFFF" />
+            android:layout_height="70dp"
+            android:layout_weight="1" />
+        <!-- Spacer to push content up -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/brandPhone"
+        <!-- 전화번호 강조 버튼 -->
+        <Button
+            android:id="@+id/brandPhoneButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF" />
+            android:text="+82 02-3482-6565"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/rounded_button_background"
+            android:backgroundTint="@null"
+            android:textColor="@android:color/black"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 자동차 리스트 (RecyclerView) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
     </LinearLayout>
 </ScrollView>

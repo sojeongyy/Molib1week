@@ -40,7 +40,7 @@ class CarListFragment : Fragment() {
         val brandSubtitle = view.findViewById<TextView>(R.id.brandSubtitle)
 
         brandTitle.text = "Obsidian"
-        brandSubtitle.text = "국내 자동차 직영점 전화번호"
+        brandSubtitle.text = "Authorized Direct Dealership Contacts in Korea"
 
         // JSON 데이터 읽기
         val carList = readJsonData(requireContext())
