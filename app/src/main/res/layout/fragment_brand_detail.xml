@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@color/black">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_marginBottom="100dp" />
+            android:layout_marginBottom="100dp"
+            android:textColor="#FFFFFF" />
 
         <!-- 웹사이트 -->
         <TextView
@@ -37,13 +38,14 @@
             android:layout_height="wrap_content"
             android:text="Site"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="4dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/brandSite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#007BFF"
+            android:textColor="#FFFFFF"
             android:layout_marginBottom="16dp" />
 
         <!-- 주소 -->
@@ -53,13 +55,15 @@
             android:layout_height="wrap_content"
             android:text="Address"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="4dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/brandAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:textColor="#FFFFFF" />
 
         <!-- 전화번호 -->
         <TextView
@@ -68,12 +72,13 @@
             android:layout_height="wrap_content"
             android:text="Phone Number"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="4dp"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/brandPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#007BFF" />
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </ScrollView>

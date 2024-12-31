@@ -76,11 +76,11 @@ class CarDetailFragment : Fragment() {
         // UI에 데이터 설정
         carNameTextView.text = name
         carBrandTextView.text = brand
-        carLaunchYearTextView.text = getString(R.string.car_launch_year, launchYear)
-        carOptionsTextView.text = getString(R.string.car_options, options)
-        carHorsepowerTextView.text = getString(R.string.car_horsepower, horsepower)
-        carFuelEconomyTextView.text = getString(R.string.car_fuel_economy, fuelEconomy)
-        carPriceTextView.text = getString(R.string.car_price, price)
+        carLaunchYearTextView.text = launchYear
+        carOptionsTextView.text = options
+        carHorsepowerTextView.text = horsepower
+        carFuelEconomyTextView.text = fuelEconomy
+        carPriceTextView.text = price
 
         // 이미지 설정
         val resourceId = requireContext().resources.getIdentifier(
