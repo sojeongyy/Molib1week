@@ -29,17 +29,22 @@ class DetailFragment : Fragment() {
 
         // 전달받은 데이터 가져오기
         val args = arguments
-        val brand = args?.getString("brand") ?: "" // 브랜드명 가져오기
+        val brand = args?.getString("brandName") ?: "" // 직영점이름
         val brandSite = args?.getString("brandSite") ?: ""
         val brandAddress = args?.getString("brandAddress") ?: ""
         val brandPhone = args?.getString("brandPhone") ?: ""
         val brandLogoResId = args?.getInt("brandLogoResId") ?: R.drawable.mclaren
+        val brandString = findBrandString(brand)
+
+        val carList = loadCars()
+
 
         // 뷰에 데이터 표시
         view.findViewById<ImageView>(R.id.brandLogo).setImageResource(brandLogoResId)
         view.findViewById<TextView>(R.id.brandName).text = brand
         view.findViewById<TextView>(R.id.brandSite).text = brandSite
         view.findViewById<TextView>(R.id.brandAddress).text = brandAddress
+        view.findViewById<TextView>(R.id.brandString).text = brandString
 
         // 전화번호 버튼 설정
         val phoneButton = view.findViewById<Button>(R.id.brandPhoneButton)
@@ -56,9 +61,9 @@ class DetailFragment : Fragment() {
         carRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         // JSON 데이터 로드 및 필터링
-        val carList = loadCars()
+
         val filteredCarList = carList.filter { car ->
-            car.brand.equals(brand, ignoreCase = true) // brand와 비교
+            car.brand.equals(brandString, ignoreCase = true) // brand와 비교
         }
 
         // RecyclerView 어댑터 설정
@@ -66,7 +71,7 @@ class DetailFragment : Fragment() {
             val adapter = CarImageAdapter(filteredCarList)
             carRecyclerView.adapter = adapter
         } else {
-            println("No cars found for brand: $brand")
+            println("No cars found for brand: $brandString")
         }
 
         return view
@@ -77,5 +82,16 @@ class DetailFragment : Fragment() {
         val reader = InputStreamReader(inputStream)
         val type = object : TypeToken<List<CarModel>>() {}.type
         return Gson().fromJson(reader, type)
+    }
+    private fun findBrandString(brandName: String): String {
+        val brandMappings = mapOf(
+            "Lamborghini Seoul" to "Lamborghini",
+            "Porsche Gangnam" to "Porsche",
+            "Maybach Gangnam" to "Maybach",
+            "RollsRoyce Seoul" to "Rolls-Royce",
+            "McLaren Seoul" to "McLaren",
+            "Bugatti Seoul" to "Bugatti"
+        )
+        return brandMappings[brandName] ?: "Unknown"
     }
 }

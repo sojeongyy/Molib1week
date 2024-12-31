@@ -32,6 +32,23 @@
             android:layout_marginBottom="50dp"
             android:textColor="#FFFFFF" />
 
+        <!-- 브랜드명 -->
+        <TextView
+            android:id="@+id/brandStringLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brand"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/brandString"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp" />
+
         <!-- 웹사이트 -->
         <TextView
             android:id="@+id/brandSiteLabel"
