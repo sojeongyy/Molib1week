@@ -73,7 +73,25 @@ class DetailFragment : Fragment() {
         } else {
             println("No cars found for brand: $brandString")
         }
-
+// 어댑터 설정 및 클릭 이벤트 처리
+        val adapter = GalleryAdapter(filteredCarList) { selectedCar ->
+            // 자동차 클릭 시 상세 페이지로 이동
+            val carDetailFragment = CarDetailFragment.newInstance(
+                selectedCar.name,
+                selectedCar.imageName,
+                selectedCar.brand,
+                selectedCar.launchYear,
+                selectedCar.options,
+                selectedCar.horsepower,
+                selectedCar.fuelEconomy,
+                selectedCar.price
+            )
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, carDetailFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        carRecyclerView.adapter = adapter
         return view
     }
 

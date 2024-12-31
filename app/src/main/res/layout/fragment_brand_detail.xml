@@ -104,6 +104,8 @@
             android:textStyle="bold"
             android:gravity="center"
             android:background="@drawable/rounded_button_background"
+            android:elevation="8dp"
+            android:outlineSpotShadowColor="#80FFFFFF"
             android:backgroundTint="@null"
             android:textColor="@android:color/black"
             android:padding="16dp"
