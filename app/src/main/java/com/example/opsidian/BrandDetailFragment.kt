@@ -1,5 +1,7 @@
 package com.example.opsidian
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,6 +32,17 @@ class DetailFragment : Fragment() {
         view.findViewById<TextView>(R.id.brandSite).text = brandSite
         view.findViewById<TextView>(R.id.brandAddress).text = brandAddress
         view.findViewById<TextView>(R.id.brandPhone).text = brandPhone
+
+        val phoneTextView = view.findViewById<TextView>(R.id.brandPhone)
+        phoneTextView.text = brandPhone
+
+        // 전화번호 클릭 시 전화 앱으로 이동
+        phoneTextView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL).apply {
+                data = Uri.parse("tel:$brandPhone")
+            }
+            startActivity(intent)
+        }
 
         return view
     }
